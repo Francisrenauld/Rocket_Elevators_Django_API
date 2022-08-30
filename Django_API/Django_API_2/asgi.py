@@ -1,5 +1,5 @@
 """
-ASGI config for Rocket_Elevator_Django_API project.
+ASGI config for Django_API_2 project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Rocket_Elevator_Django_API.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Django_API_2.settings')
 
 application = get_asgi_application()
