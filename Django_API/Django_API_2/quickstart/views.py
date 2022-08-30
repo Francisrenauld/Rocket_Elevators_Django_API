@@ -8,5 +8,15 @@ class EmployeesViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
+    
     queryset = Employees.objects.all()
     serializer_class = EmployeesSerializer
+
+    
+class EmployeesByIdViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Employees.objects.filter()
+    serializer_class = EmployeesSerializer
+    

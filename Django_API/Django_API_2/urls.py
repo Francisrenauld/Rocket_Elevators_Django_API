@@ -19,6 +19,7 @@ from Django_API_2.quickstart import views
 
 router = routers.DefaultRouter()
 router.register(r'employees', views.EmployeesViewSet)
+router.register(r'GetEmployeeById', views.EmployeesByIdViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
