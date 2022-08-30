@@ -75,10 +75,15 @@ WSGI_APPLICATION = 'Rocket_Elevator_Django_API.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+  'default': {
+    # MySQL engine. Powered by the mysqlclient module.
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'FrancisRenauld',
+    'USER': 'codeboxx',
+    'PASSWORD': 'Codeboxx1!',
+    'HOST': 'codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com',
+    'PORT': '3306',
+  }
 }
 
 
