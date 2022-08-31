@@ -26,6 +26,7 @@ router.register(r'GetEmployeeById', views.EmployeesByIdViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('Get_Encoding', views.Get_Encoding)
+    path('Register', views.Register),
+    path('Update_Profile', views.Update_Image)
 
 ]

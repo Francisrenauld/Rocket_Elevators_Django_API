@@ -27,15 +27,14 @@ class EmployeesByIdViewSet(viewsets.ModelViewSet):
     serializer_class = EmployeesSerializer
 
 @api_view(['GET'])
-def Get_Encoding(request):
+def Register(request):
     
     if(request.method == 'GET'):
         try:
-            
             queryset = Employees.objects.get(email=request.data['email'])
             employee = EmployeesSerializer(queryset, many=False)
-            image2 = face_recognition.load_image_file(request.data['file'])
-            unknown_face_encoding = face_recognition.face_encodings(image2)[0]
+            imageInDB = face_recognition.load_image_file(request.data['Insert Picture'])
+            unknown_face_encoding = face_recognition.face_encodings(imageInDB)[0]
 
             known_faces = [
                 employee.data['keypoints']
@@ -51,6 +50,20 @@ def Get_Encoding(request):
             return Response("The image sent doesn't match!")
         except IndexError:
             quit()
+
+    
+        
+
+@api_view(['PUT'])
+def Update_Image(request):
+    if request.method == 'PUT':
+        imageInDB = face_recognition.load_image_file(request.data['Insert Picture'])
+        new_face = face_recognition.face_encodings(imageInDB)[0]
+        a = list(new_face)
+        b = json.dumps(a)
+        c = json.loads(b)
+        Employees.objects.filter(email=request.data['email']).update(keypoints=c)
+        return Response("Your picture had been updated successfully")
 
 
         
