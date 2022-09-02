@@ -1,1 +1,1 @@
-web: python Django_API/manage.py runserver 0.0.0.0:$PORT
+web: python3 Django_API/manage.py runserver 0.0.0.0:$PORT
