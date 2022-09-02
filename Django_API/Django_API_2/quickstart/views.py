@@ -1,4 +1,3 @@
-import flask
 from django.shortcuts import render
 from DjangoSite.models import Employees
 from rest_framework import viewsets
