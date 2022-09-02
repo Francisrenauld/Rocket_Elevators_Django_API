@@ -1,1 +1,1 @@
-web: gunicorn Django_API.wsgi
+web: python Django_API/manage.py runserver 0.0.0.0:$PORT
